@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "4fa36bef-60e2-4bc7-a828-f5b1dce29565",
+		"name": "Spring Microservices: Wk3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41971412"
+	},
+	"item": [
+		{
+			"name": "getLicense - es",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/LIC-CDB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"LIC-CDB"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLicense - de",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "de",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/0235431845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"0235431845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLicense - en",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/LIC-CDB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"LIC-CDB"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLicense - es",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 101,\r\n  \"licenseId\": \"LIC-2025-001\",\r\n  \"description\": \"Enterprise license for product X\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product X Suite\",\r\n  \"licenseType\": \"full\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLicense - de",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "de",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 101,\r\n  \"licenseId\": \"LIC-2025-001\",\r\n  \"description\": \"Enterprise license for product X\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product X Suite\",\r\n  \"licenseType\": \"full\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLicense - en",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 101,\r\n  \"licenseId\": \"LIC-2025-001\",\r\n  \"description\": \"Enterprise license for product X\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product X Suite\",\r\n  \"licenseType\": \"full\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLicense - es",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"licenseId\": \"LIC-CDB\",\r\n  \"description\": \"Trial license for Product Y\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product Y Suite\",\r\n  \"licenseType\": \"TRIAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLicense - de",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "de",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"licenseId\": \"LIC-2025-002\",\r\n  \"description\": \"Trial license for Product Z\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product Z Suite\",\r\n  \"licenseType\": \"TRIAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLicense en",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"licenseId\": \"LIC-CDB\",\r\n  \"description\": \"Trial license for Product Y\",\r\n  \"organizationId\": \"org-789\",\r\n  \"productName\": \"Product Y Suite\",\r\n  \"licenseType\": \"TRIAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLicense - es",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/0235431845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"0235431845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLicense - de",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "de",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/0235431845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"0235431845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLicense - en",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/organization/optimaGrowth/license/0235431845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"0235431845"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

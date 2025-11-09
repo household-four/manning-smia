@@ -1,5 +1,8 @@
 ## Spring Microservices in Action - Second Edition. Chapter 8
 
+# Christen's notes 
+For week 8, I had to add the version attribute to the lombok packages in all of the pom's that use it. I also had to change the jdk/jre build stuff from openjdk:11-slim to eclipse-temurin:11-jdk-jammy to get it to build. Finally, I had to change the config server to no longer use classpath:config, since that refers to something that has been built into a JAR, so it doesnt allow doing dynamic route update. So i changed it from `search-locations: classpath:/config` to `search-locations: file:///usr/share/configdata` The usr/share/configdata is a made-up path I made which has something to do with the docker image and volumes. Oh, and I had to mount this volume in the config server part of the docker compose yml. This makes sure the docker container reads from this location instead of the JARs, allowing me to modify files and have it dynamically update the routes. 
+
 # Introduction
 Welcome to Spring Microservices in Action, Chapter 8.  Chapter 8 introduces the concept of a API gateway. API gateways are using to enforce consistent policies and actions on all service calls. With this chapter we are going to introduce Spring Cloud Gateway.
 

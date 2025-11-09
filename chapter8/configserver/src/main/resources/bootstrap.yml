@@ -8,10 +8,8 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/config
-        #git:
-         #   uri: https://github.com/ihuaylupo/config.git
-         #   searchPaths: licensingservice
+          search-locations: file:///usr/share/configdata
+
     
 server:
   port: 8071

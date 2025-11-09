@@ -3,15 +3,19 @@ spring:
     name: config-server
   profiles:
     active:
-    - native
+    - git
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
-        #git:
-         #   uri: https://github.com/ihuaylupo/config.git
-         #   searchPaths: licensingservice
+        #native:
+          #search-locations: classpath:/config
+        git:
+          uri: https://github.com/household-four/manning-smia-config.git
+          searchPaths: config
+          default-label: main
+          clone-on-start: true
+          username: MYUSRERNMA
+          password: MYPASSWORD
     
 server:
   port: 8071

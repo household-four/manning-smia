@@ -30,6 +30,8 @@ services:
       backend:
         aliases:
           - "configserver"
+    volumes:
+      - ../configserver/src/main/resources/config:/usr/share/configdata 
   eurekaserver:
     image: ostock/eurekaserver:0.0.1-SNAPSHOT
     ports:

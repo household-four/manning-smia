@@ -26,23 +26,72 @@ services:
        - "8071:8071"
     environment:
       ENCRYPT_KEY: "fje83Ki8403Iod87dne7Yjsl3THueh48jfuO9j4U2hf64Lo"
+
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_CONFIG_SERVER: DEBUG
+      LOGGING_LEVEL_ORG_ECLIPSE_JGIT: INFO
     networks:
       backend:
         aliases:
           - "configserver"
-  eurekaserver:
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8071/actuator/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  
+  eurekaserver1:
     image: ostock/eurekaserver:0.0.1-SNAPSHOT
-    ports:
-      - "8070:8070"
     depends_on:
       database:
         condition: service_healthy
-      configserver:
-        condition: service_started  
+      configserver: 
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: eureka-server
+      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CLOUD_CONFIG_LABEL: main
+      SPRING_PROFILES_ACTIVE: peer1
+    ports:
+      - "8091:8091"
+    networks:
+      backend: 
+        aliases: [ "eurekaserver1" ]
+
+  eurekaserver2:
+    image: ostock/eurekaserver:0.0.1-SNAPSHOT
+    depends_on:
+      database:
+        condition: service_healthy
+      configserver: 
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: eureka-server
+      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CLOUD_CONFIG_LABEL: main
+      SPRING_PROFILES_ACTIVE: peer2
+    ports:
+      - "8092:8091"
     networks:
       backend:
-        aliases:
-          - "eurekaserver"
+        aliases: [ "eurekaserver2" ]
+
+  eurekaserver3:
+    image: ostock/eurekaserver:0.0.1-SNAPSHOT
+    depends_on:
+      database:
+        condition: service_healthy
+      configserver: 
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: eureka-server
+      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
+      SPRING_CLOUD_CONFIG_LABEL: main
+      SPRING_PROFILES_ACTIVE: peer3
+    ports:
+      - "8093:8091"
+    networks:
+      backend:
+        aliases: [ "eurekaserver3" ]
   licensingservice:
     image: ostock/licensing-service:0.0.3-SNAPSHOT
     environment:

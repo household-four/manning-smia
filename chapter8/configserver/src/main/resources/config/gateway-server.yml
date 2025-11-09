@@ -15,22 +15,37 @@ spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-        routes:
-        - id: organization-service
-          uri: lb://organization-service
-          predicates:
-          - Path=/organization/**
-          filters:
-          - RewritePath=/organization/(?<path>.*), /$\{path}
-        - id: licensing-service
-          uri: lb://licensing-service
-          predicates:
-          - Path=/license/**
-          filters:
-          - RewritePath=/license/(?<path>.*), /$\{path}
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: organization-service
+        uri: lb://organization-service
+        predicates:
+        - Path=/organization/**
+        filters:
+        - RewritePath=/organization/(?<path>.*), /$\{path}
+      - id: licensing-service
+        uri: lb://licensing-service
+        predicates:
+        - Path=/license/**
+        filters:
+        - RewritePath=/license/(?<path>.*), /$\{path}
+      - id: baylor
+        uri: https://www.baylor.edu
+        predicates:
+          - Path=/baylor/**
+        filters:
+          - StripPrefix=1
+      - id: google
+        uri: https://www.google.com
+        predicates:
+          - Path=/google/**
+        filters:
+          - StripPrefix=1
 
-
-       
+      
 management:
   endpoints:
     web:
