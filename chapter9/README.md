@@ -1,5 +1,14 @@
 ## Spring Microservices in Action - Second Edition. Chapter 9
 
+# Christen's notes 
+For week 9, 
+- added the `version` attribute to the lombok packages in all of the POMs that use lombok
+- changed the jdk/jre Dockerfile stuff from `openjdk:11-slim` to `eclipse-temurin:11-jdk-jammy` to get it to build. 
+- changed the keycloak image since the one from the book is out of date 
+- used spring-boot-starter-oauth2-resource-server instead of the keycloak dependencies described in the book. That way is out of date.
+- modified the SecurityConfig class for organization service to fit the new oauth2-resource-server way of doing things 
+- modified the `realm-export.json` file to not include `authorizationSettings`. This was preventing me from importing the file. 
+
 # Introduction
 Welcome to Spring Microservices in Action, Chapter 9.  Chapter 9 demonstrates how to build security with your services using Spring Cloud Security and KeyCloak.  In this chapter we build an Authentication and authorization server using KeyCloak. 
 

@@ -101,25 +101,23 @@ services:
       - backend
 
   keycloak:
-    image: jboss/keycloak
+    image: quay.io/keycloak/keycloak:26.4.4
     restart: always
     environment:
-      KEYCLOAK_VERSION: 6.0.1
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-    volumes:
-        - ./realm-export.json:/opt/jboss/keycloak/realm-export.json
-    command:
-      - "-b 0.0.0.0"
-      - "-Dkeycloak.import=/opt/jboss/keycloak/realm-export.json"
-      - "-Dkeycloak.profile.feature.scripts=enabled"
-      - "-Dkeycloak.profile.feature.upload_scripts=enabled"
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_SPI_TRUSTSTORE_FILE_SCRIPT_ENABLE: true
+      KC_FEATURES: scripts
     ports:
       - "8080:8080"
     networks:
       backend:
         aliases:
           - "keycloak"
+    volumes:
+    - ./realm-export.json:/opt/keycloak/data/import/realm-export.json
+    command:
+      - start-dev
 
 networks:
   backend:
