@@ -1,5 +1,11 @@
 ## Spring Microservices in Action - Second Edition. Chapter 10
 
+# Christen's notes 
+For Chapter 10, 
+- added the `version` attribute to the lombok packages in all of the POMs that use lombok
+- changed the jdk/jre Dockerfile stuff from `openjdk:11-slim` to `eclipse-temurin:11-jdk-jammy` to get it to build. 
+
+
 # Introduction
 Welcome to Spring Microservices in Action, Chapter 10.  Chapter 10 demonstrates how to use Spring Cloud Stream messaging to asynchronously communicate messages between Spring Boot services. For this chapter, we will use Kafka as our message bus to transport messages between our services.
 
