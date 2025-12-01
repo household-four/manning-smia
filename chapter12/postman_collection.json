@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "0a5be317-5f53-4485-b1e6-6c96ed7b8500",
+		"name": "Spring Microservices: Wk12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41971412"
+	},
+	"item": [
+		{
+			"name": "POST new license",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ostock\",\r\n    \"contactName\": \"Christen Barringer\",\r\n    \"contactEmail\": \"christen_barringer1@baylor.edu\",\r\n    \"contactPhone\": \"8888888888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8072/organization/v1/organization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8072",
+					"path": [
+						"organization",
+						"v1",
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET  license",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ostock\",\r\n    \"contactName\": \"Christen Barringer\",\r\n    \"contactEmail\": \"christen_barringer1@baylor.edu\",\r\n    \"contactPhone\": \"8888888888\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8072/license/v1/organization/d898a142-de44-466c-8c88-9ceb2c2429d3/license/f2a9c9d4-d2c0-44fa-97fe-724d77173c62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8072",
+					"path": [
+						"license",
+						"v1",
+						"organization",
+						"d898a142-de44-466c-8c88-9ceb2c2429d3",
+						"license",
+						"f2a9c9d4-d2c0-44fa-97fe-724d77173c62"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET organization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8072/organization/v1/organization/d898a142-de44-466c-8c88-9ceb2c2429d3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8072",
+					"path": [
+						"organization",
+						"v1",
+						"organization",
+						"d898a142-de44-466c-8c88-9ceb2c2429d3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
