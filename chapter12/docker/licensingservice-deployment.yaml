@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Tools\Kube\kompose\kompose.exe convert
+    kompose.version: 1.37.0 (fb0539e64)
+  labels:
+    io.kompose.service: licensingservice
+  name: licensingservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      io.kompose.service: licensingservice
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Tools\Kube\kompose\kompose.exe convert
+        kompose.version: 1.37.0 (fb0539e64)
+      labels:
+        io.kompose.service: licensingservice
+    spec:
+      containers:
+        - env:
+            - name: CONFIGSERVER_PORT
+              value: "8071"
+            - name: CONFIGSERVER_URI
+              value: http://configserver:8071
+            - name: DATABASESERVER_PORT
+              value: "5432"
+            - name: ENCRYPT_KEY
+              value: IMSYMMETRIC
+            - name: PROFILE
+              value: dev
+          image: maruftuhin/licensing-service:0.0.3-SNAPSHOT
+          name: licensingservice
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      restartPolicy: Always

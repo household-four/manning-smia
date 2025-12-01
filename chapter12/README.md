@@ -1,5 +1,11 @@
 ## Spring Microservices in Action - Second Edition. Chapter 12
 
+# Christen's notes 
+For Chapter 12, 
+- added the `version` attribute to the lombok packages in all of the POMs that use lombok
+- changed the jdk/jre Dockerfile stuff from `openjdk:11-slim` to `eclipse-temurin:11-jdk-jammy` to get it to build. 
+- Modified the docker-compose.yml file to be able to build kubernetes files using `kompose convert`
+
 # Introduction
 Welcome to Spring Microservices in Action, Chapter 12.  Chapter 12 is almost the end of the book and demonstrates how to create a build and deployment pipeline.  We walkthrough how to build this pipeline and then deploy all of the services to Amazon's Elastic Kubernetes Service (EKS). 
 
